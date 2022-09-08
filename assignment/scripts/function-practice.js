@@ -71,6 +71,13 @@ const array3 = ['eggs', 'milk', 'cheese', 'blueberries'];
 function getLast( array ) {
    if (array != ''){
     return array[array.length - 1];
+
+    /* I found a resource online that showed a way to return the last item using splice:
+    return array.splice(-1)[0]; 
+    I read that this makes a shallow copy of the item in the array and puts the value into a new array.
+    I was wondering, does using the [array.length -] way also put the item into a new array?
+    Thanks for your insight/feedback!
+    */
    } else if (array == ''){
      return 'undefined';
    }
@@ -83,9 +90,25 @@ console.log(getLast(array3));
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-function find( value, array ){
-  
-}
+
+const array4 = [7, 9, 3, 2];
+
+function find( value, array4 ){
+  for (let i =0; i < array4.length; i++){
+    if (value === array4[i]){
+      return true; 
+    }
+  } 
+    return false;
+
+} 
+
+console.log(find(9, array4));
+console.log(find(5, array4));
+console.log(find(3, array4));
+
+
+
 
 // ----------------------
 // Stretch Goals
@@ -113,4 +136,4 @@ function sumAll( ) {
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
-//     here in a comment, write the function, and test it!
+//     here in a comment, write the function, and test it! 
