@@ -99,10 +99,9 @@ function find( value, array4 ){
       return true; 
     }
   } 
-    return false;
+     return false;
 
 } 
-
 console.log(find(9, array4));
 console.log(find(5, array4));
 console.log(find(3, array4));
@@ -115,25 +114,101 @@ console.log(find(3, array4));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {
 
+let string = ' ';
+string.split();
+
+function isFirstLetter(letter, string) {
+  for (s of string){
+      if (letter == string[0]){
+        return true;
+      } 
+  }
+       return false;
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+console.log(isFirstLetter('m', 'make'));
+console.log(isFirstLetter('c', 'husky'));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+
+const array5 = [7, 6, 9, 3, 4];
+const array6 = [-2, -3, 4, 1];
+
+function sumAll(array5) {
   let sum = 0
   // TODO: loop to add items
+   for (let i = 0; i < array5.length; i++) {
+      sum += array5[i];
+   }
   return sum;
 }
+console.log(sumAll(array5));
+console.log(sumAll(array6));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+
+/* This question took me a long time to figure out. I think I need more practice with 
+variable scope, because it took me awhile to figure out where to declare/place the 
+variables in this code.*/
+
+const inputArray = [5, 8, 9, 0, 3];
+const inputArray2 = [-6, 8, 9, 0];
+const inputArray3 = [-3, -4, -5, -7];
+let number = 0;
+
+function createNewArray(arr){
+
+   let newArray = [];  
+   for (let i = 0; i < arr.length; i++){
+    number = arr[i];
+      if (number > 0) {
+        newArray.push(number);
+      }      
+   }
+      return newArray; 
+   }
+ 
+ console.log(createNewArray(inputArray));
+ console.log(createNewArray(inputArray2));
+ console.log(createNewArray(inputArray3));
 
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it! 
+
+//Create a function that takes a number as an argument. 
+//Add up all the numbers from 1 to the number you passed to the function. 
+//For example, if the input is 4 then your function should return 10 because 
+//1 + 2 + 3 + 4 = 10.
+
+//First solution
+
+
+function addUp(number) {
+  let sum = 0;
+  for (let i = 1; i <= number; i++){
+    sum += i;
+  }
+  return sum;
+}
+console.log(addUp(5));
+console.log(addUp(6));
+console.log(addUp(8));
+
+//Second solution
+
+function addUp(number) {
+let sum2 = (number * (number + 1))/2;
+for (let i = 1; i < number; i++){
+}
+return sum2;
+}
+console.log(addUp(5));
+console.log(addUp(6));
+console.log(addUp(8));
